@@ -12,6 +12,9 @@
 	<dubbo:registry address="zookeeper://192.168.99.100:2181" />
 	<dubbo:consumer timeout="50000" />
 
-	<dubbo:reference id="demoService" interface="com.cml.dubbo.server.Provider" listener="listener"/>
-	<dubbo:reference interface="com.cml.dubbo.server.annotation.UserService" id="userService" listener="listener"/>
+	<!-- listener 配置在META-INF/dubbo/com.alibaba.dubbo.rpc.InvokerListener文件中 -->
+	<dubbo:reference id="demoService" interface="com.cml.dubbo.server.Provider"
+		listener="listener" />
+	<dubbo:reference interface="com.cml.dubbo.server.annotation.UserService"
+		id="userService" listener="listener" />
 </beans>
