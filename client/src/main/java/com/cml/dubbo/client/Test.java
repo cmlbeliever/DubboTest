@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cml.dubbo.server.Provider;
+import com.cml.dubbo.server.annotation.UserService;
 
 public class Test {
 
@@ -19,6 +20,7 @@ public class Test {
 
 		log.info("start success!!");
 		Provider demoService = (Provider) context.getBean("demoService"); // 获取bean
+		UserService userService = context.getBean(UserService.class);
 		log.info("====getbean======");
 		String message = "";
 		try {
@@ -26,6 +28,12 @@ public class Test {
 			for (int i = 0; i < 10; i++) {
 				message = demoService.build("build for value : " + (i + 1));
 				log.info(" the message from server is:" + message + ",spendTime:" + (System.currentTimeMillis() - start) + "ms");
+				start = System.currentTimeMillis();
+			}
+			start = System.currentTimeMillis();
+			for (int i = 0; i < 10; i++) {
+				message = userService.login("username" + i, "password" + i);
+				log.info(" login result:" + message + ",spendTime:" + (System.currentTimeMillis() - start) + "ms");
 				start = System.currentTimeMillis();
 			}
 

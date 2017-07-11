@@ -31,7 +31,7 @@
 
 
   <root>
-    <level value="ALL"/>
+    <level value="INFO"/>
     <appender-ref ref="STDOUT"/>
   </root>
 

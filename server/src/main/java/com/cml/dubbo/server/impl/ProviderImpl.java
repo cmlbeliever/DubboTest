@@ -8,7 +8,7 @@ public class ProviderImpl implements Provider {
 
 	public String build(String name) throws Exception {
 		System.out.println("server build:" + name);
-		TimeUnit.SECONDS.sleep(30);
+//		TimeUnit.SECONDS.sleep(30);
 		return name + ".server";
 	}
 
