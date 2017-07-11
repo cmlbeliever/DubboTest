@@ -1,0 +1,1 @@
+listener=com.cml.dubbo.client.listener.MyRemoteListener
