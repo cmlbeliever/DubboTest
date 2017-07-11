@@ -10,7 +10,7 @@
 	<dubbo:application name="consumer_app" />
 
 	<dubbo:registry address="zookeeper://192.168.99.100:2181" />
-	<dubbo:consumer timeout="5000" />
+	<dubbo:consumer timeout="50000" />
 
 	<dubbo:reference id="demoService" interface="com.cml.dubbo.server.Provider" />
 </beans>
